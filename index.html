@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gerador Pair Code</title>
+  </head>
+  <body style="text-align:center;font-family:sans-serif;">
+    <h2>Gerar código de pareamento</h2>
+    <input id="number" placeholder="Ex: 559123456789" />
+    <button onclick="generate()">Gerar Pair Code</button>
+    <p id="result"></p>
+    <script>
+      async function generate() {
+        const number = document.getElementById("number").value;
+        const res = await fetch("/pair", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ number })
+        });
+        const data = await res.json();
+        document.getElementById("result").innerText =
+          data.code || data.error || "Erro";
+      }
+    </script>
+  </body>
+</html>
