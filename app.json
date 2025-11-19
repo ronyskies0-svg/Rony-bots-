@@ -1,0 +1,62 @@
+{
+  "name": "rony Skies",
+  "description": "This is a bot for managing group commands and automating tasks.",
+  "repository": "https://github.com/rgm/rony skies",
+  "logo": "https://i.ibb.co/bjTC9sF5/ronaldo-skies.jpg",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot", "automation"],
+  "success_url": "/",
+  "env": {
+    "BOT_NAME": {
+      "description": "Name of your bot",
+      "value": "RONY SKIES",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "Name of the bot owner",
+      "value": "Ronaldo Mazive",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner's phone number with country code",
+      "value": "1234567890",
+      "required": true
+    },
+    "SESSION_ID": {
+      "description": "Session ID for the bot",
+      "value": "add ur session id here",
+      "required": true
+    },
+    "TIMEZONE": {
+      "description": "Your timezone",
+      "value": "Africa/Harare",
+      "required": true
+    },
+    "MODE": {
+      "description": "Bot operation mode",
+      "value": "public",
+      "required": true
+    },
+    "GIPHY_API_KEY": {
+      "description": "Giphy API key",
+      "value": "qnl7ssQChTdPjsKta2Ax2LMaGXz303tq",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
